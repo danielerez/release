@@ -73,10 +73,12 @@ tests:
     dependencies:
       APPLIANCE_IMAGE: agent-preinstall-image-builder
     env:
+      AGENT_E2E_TEST_BOOT_MODE: DISKIMAGE
       DEVSCRIPTS_CONFIG: |
         AGENT_E2E_TEST_BOOT_MODE=DISKIMAGE
         AGENT_E2E_TEST_SCENARIO=COMPACT_IPV4
         INSTALLER_PROXY=true
+        MIN_SPACE_REQUIRED=200
     workflow: agent-e2e-generic
   timeout: 6h0m0s
 - as: e2e-sno-dualstack-dhcp
@@ -89,10 +91,12 @@ tests:
     dependencies:
       APPLIANCE_IMAGE: agent-preinstall-image-builder
     env:
+      AGENT_E2E_TEST_BOOT_MODE: DISKIMAGE
       DEVSCRIPTS_CONFIG: |
         AGENT_E2E_TEST_BOOT_MODE=DISKIMAGE
         AGENT_E2E_TEST_SCENARIO=SNO_IPV4V6_DHCP
         INSTALLER_PROXY=true
+        MIN_SPACE_REQUIRED=200
     workflow: agent-e2e-generic
   timeout: 6h0m0s
 zz_generated_metadata:
